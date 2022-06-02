@@ -4,7 +4,7 @@
 
 <sly data-sly-use.object="${'com.cbus.aem.core.models.PetTypesModel'}" />
 <form name="pets">
-    <select data-sly-list="${object.petTypeList}" name="type" id="type">
+    <select data-sly-list="${object.getPetTypeList}" name="type" id="type">
         <option data-sly-test="${item.first}" value="${item.value @ context='attribute'}" selected>${item.displayName}</option>
         <option data-sly-test="${! item.first}" value="${item.value @ context='attribute'}">${item.displayName}</option>
     </select>

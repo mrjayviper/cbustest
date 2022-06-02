@@ -4,23 +4,27 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class JsonUtils {
-    public static Boolean isJsonObject(String string) {
+    private JsonUtils() {
+        throw new IllegalStateException("JsonUtils class");
+    }
+
+    public static boolean isJsonObject(String string) {
         try {
             new JSONObject(string);
         } catch (Exception exception) {
-            return Boolean.FALSE;
+            return false;
         }
 
-        return Boolean.TRUE;
+        return true;
     }
 
-    public static Boolean isJsonArray(String string) {
+    public static boolean isJsonArray(String string) {
         try {
             new JSONArray(string);
         } catch (Exception exception) {
-            return Boolean.FALSE;
+            return false;
         }
 
-        return Boolean.TRUE;
+        return true;
     }
 }

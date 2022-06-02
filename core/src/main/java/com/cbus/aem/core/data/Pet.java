@@ -38,6 +38,6 @@ public class Pet {
         return type;
     }
     public void setType(String type) {
-        this.name = type;
+        this.type = type;
     }
 }

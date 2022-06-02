@@ -16,6 +16,10 @@ import java.util.stream.Collectors;
 public class PetsUtils {
     private static Logger log = LoggerFactory.getLogger(PetsUtils.class);
 
+    private PetsUtils() {
+        throw new IllegalStateException("JsonUtils class");
+    }
+
     public static List<Owner> parseJsonObject(final String sourceApiResponse) {
         //Intentionally left empty since the source API data is an array
 
@@ -23,7 +27,6 @@ public class PetsUtils {
     }
 
     public static List<Owner> parseJsonArray(final String sourceApiResponse) {
-        //List<Owner> ownersList = new ArrayList<Owner> ();
         try {
             return new ObjectMapper().readValue(sourceApiResponse, new TypeReference<List<Owner>>(){});
         } catch (Exception exception){

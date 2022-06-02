@@ -50,7 +50,7 @@ public class PetsServlet extends SlingSafeMethodsServlet {
 
         String jsonResponse = JSON_EMPTY;
 
-        List<Owner> ownerList = new ArrayList<Owner>();
+        List<Owner> ownerList = new ArrayList<>();
 
         //get URL parameters
         final String type = request.getParameter("type") != null && request.getParameter("type").length() > 0
@@ -72,13 +72,13 @@ public class PetsServlet extends SlingSafeMethodsServlet {
                 ownerList.clear();
 
                 if (StringUtils.isNotBlank(sourceApiResponse)) {
-                    if (JsonUtils.isJsonObject(sourceApiResponse)) {
+                    if (Boolean.TRUE.equals(JsonUtils.isJsonObject(sourceApiResponse))) {
                         ownerList = PetsUtils.parseJsonObject(sourceApiResponse);
-                    } else if (JsonUtils.isJsonArray(sourceApiResponse)) {
+                    } else if (Boolean.TRUE.equals(JsonUtils.isJsonArray(sourceApiResponse))) {
                         ownerList = PetsUtils.parseJsonArray(sourceApiResponse);
                     }
 
-                    if (ownerList.size() > 0) {
+                    if (! ownerList.isEmpty()) {
                         jsonResponse = PetsUtils.getAllPetsFilterByType(ownerList, type);
 
                         if (jsonResponse.length() == 0) {

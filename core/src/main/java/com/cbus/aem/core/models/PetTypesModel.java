@@ -27,7 +27,7 @@ public class PetTypesModel {
     @Inject
     PetsApiConfigService service;
 
-    public List<PetType> petTypeList = new ArrayList<>();
+    private List<PetType> petTypeList = new ArrayList<>();
 
     @PostConstruct
     private void initModel() {
@@ -35,5 +35,9 @@ public class PetTypesModel {
 
         Arrays.asList(StringUtils.splitPreserveAllTokens(config.petsTypes(), PET_TYPE_DELIMITER))
             .forEach(type -> petTypeList.add(new PetType(type, type.toUpperCase())));
+    }
+
+    public List<PetType> getPetTypeList() {
+        return petTypeList;
     }
 }

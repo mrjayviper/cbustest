@@ -18,6 +18,10 @@ public class IntegrationUtils {
 
     private static final Integer READ_TIMEOUT = 10000;
 
+    private IntegrationUtils() {
+        throw new IllegalStateException("IntegrationUtils class");
+    }
+
     public static String getResponseFromUrl(String url, Integer connectionTimeout, Integer readTimeout) throws IOException {
         connectionTimeout = ! Objects.isNull(connectionTimeout) ? connectionTimeout : CONNECTION_TIMEOUT;
 
