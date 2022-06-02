@@ -1,0 +1,6 @@
+{
+    "petsApiUrl": "https://www.cbussuper.com.au/petowners.json"
+    , "connectionTimeout": 10000
+    , "readTimeout": 10000
+    , "petsTypes": "cat,dog,fish"
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/cbustest/clientlibs"/>
+    <filter root="/apps/cbustest/components"/>
+    <filter root="/apps/cbustest/i18n"/>
+</workspaceFilter>

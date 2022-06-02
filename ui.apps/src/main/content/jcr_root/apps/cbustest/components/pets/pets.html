@@ -1,0 +1,16 @@
+<div data-sly-test.isAuthoring="${wcmmode.edit}" class="flinders_aem_author_label">
+    Pets component
+</div>
+
+<sly data-sly-use.object="${'com.cbus.aem.core.models.PetTypesModel'}" />
+<form name="pets">
+    <select data-sly-list="${object.petTypeList}" name="type" id="type">
+        <option data-sly-test="${item.first}" value="${item.value @ context='attribute'}" selected>${item.displayName}</option>
+        <option data-sly-test="${! item.first}" value="${item.value @ context='attribute'}">${item.displayName}</option>
+    </select>
+    &nbsp;<button id="search" type="button">Search</button>
+</form>
+
+<div id="target"></div>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-call="${clientLib.all @ categories='cbustest.components.pets'}"></sly>

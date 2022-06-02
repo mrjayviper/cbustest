@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/cbustest",
+        "create path (nt:unstructured) /content/dam/cbustest/jcr:content",
+        "set properties on /content/dam/cbustest/jcr:content\n  set cq:conf{String} to /conf/cbustest\n  set jcr:title{String} to \"CBUS Test\"\nend"
+    ]
+}
