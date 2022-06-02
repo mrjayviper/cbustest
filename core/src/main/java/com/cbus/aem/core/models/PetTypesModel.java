@@ -11,9 +11,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,21 +27,13 @@ public class PetTypesModel {
     @Inject
     PetsApiConfigService service;
 
-    private static final Logger log = LoggerFactory.getLogger(PetTypesModel.class);
-
-    public List<PetType> petTypeList = new ArrayList<PetType>();
-
-    public String defaultOption = "CAT";
+    public List<PetType> petTypeList = new ArrayList<>();
 
     @PostConstruct
     private void initModel() {
         final PetsApiConfig config = service.getConfig();
 
         Arrays.asList(StringUtils.splitPreserveAllTokens(config.petsTypes(), PET_TYPE_DELIMITER))
-            .forEach(type -> {
-                petTypeList.add(new PetType(type, type.toUpperCase()));
-            });
-
-        String test="";
+            .forEach(type -> petTypeList.add(new PetType(type, type.toUpperCase())));
     }
 }

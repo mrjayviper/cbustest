@@ -14,8 +14,6 @@ import org.slf4j.LoggerFactory;
 public class IntegrationUtils {
     private static Logger log = LoggerFactory.getLogger(IntegrationUtils.class);
 
-    private static final String DISPATCHER_URL_PATTERN = "dispatcher/invalidate.cache";
-
     private static final Integer CONNECTION_TIMEOUT = 5000;
 
     private static final Integer READ_TIMEOUT = 10000;

@@ -19,7 +19,7 @@ public class PetsUtils {
     public static List<Owner> parseJsonObject(final String sourceApiResponse) {
         //Intentionally left empty since the source API data is an array
 
-        return new ArrayList<Owner> ();
+        return new ArrayList<> ();
     }
 
     public static List<Owner> parseJsonArray(final String sourceApiResponse) {
@@ -30,11 +30,11 @@ public class PetsUtils {
             log.error("PetsServlet/parseJsonArray - error in servlet", exception);
         }
 
-        return new ArrayList<Owner> ();
+        return new ArrayList<> ();
     }
 
     public static String getAllPetsFilterByType(final List<Owner> ownerList, final String type) {
-        List<Pet> petList = new ArrayList<Pet>();
+        List<Pet> petList = new ArrayList<>();
 
         String jsonResponse = StringUtils.EMPTY;
 
